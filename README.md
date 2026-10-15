@@ -183,9 +183,13 @@ Better-UP-AI-AUTOMATION/
 │   └── idempotency.db             # SQLite database for deduplication
 │
 ├── run_all_scenarios.py           # Master scenario test runner
-├── SYSTEMS_FLOW_MAP.md            # Detailed visual workflow & sequence diagrams
+├── BUILD_NOTE.md                  # Comprehensive candidate evaluation write-up
+├── DEMO_RUN_LOG.md                # Execution evidence, before/after tables, & audit traces
+├── SYSTEMS_FLOW_MAP.md            # Detailed visual workflow, sequence diagrams, & SLOs
+├── config.py                      # Central configuration & environment loader
 ├── requirements.txt               # Dependencies
-└── .env.example                   # Environment variable template
+├── .env.example                   # Environment variable template
+└── .gitignore                     # Git ignore rules
 ```
 
 ---
