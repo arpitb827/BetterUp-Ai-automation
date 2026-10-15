@@ -182,7 +182,8 @@ Better-UP-AI-AUTOMATION/
 │   ├── mock_db.json               # Shared in-memory mock store across systems
 │   └── idempotency.db             # SQLite database for deduplication
 │
-├── run_all_scenarios.py           # Master scenario test runner
+├── run_all_scenarios.py           # Master scenario test runner (7 scenarios)
+├── demo_cohort_run.py             # Realistic 10-hire cross-departmental cohort demo
 ├── BUILD_NOTE.md                  # Comprehensive candidate evaluation write-up
 ├── DEMO_RUN_LOG.md                # Execution evidence, before/after tables, & audit traces
 ├── SYSTEMS_FLOW_MAP.md            # Detailed visual workflow, sequence diagrams, & SLOs
@@ -219,24 +220,33 @@ cp .env.example .env
 python3 run_all_scenarios.py
 ```
 
-**Expected Output:**
-```
-============================================================
-  RESULTS SUMMARY
-============================================================
-  ✅ PASSED: 01 — Standard New Hire
-  ✅ PASSED: 02 — Start Date Change
-  ✅ PASSED: 03 — Address Changed After Ship
-  ✅ PASSED: 04 — Off-Cycle Hire (Workday-Only)
-  ✅ PASSED: 05 — Legal Name Mismatch
-  ✅ PASSED: 06 — Concurrency Race & OCC
-  ✅ PASSED: 07 — Missed Webhook Recovery (Poller)
+### 3. Run the 10-Hire Cross-Departmental Cohort Live Demo
 
-  Total: 7 passed, 0 failed out of 7 scenarios
-============================================================
+```bash
+python3 demo_cohort_run.py
 ```
 
-### 3. Run Individual Scenarios
+**Cohort Metrics Output:**
+```text
+=================================================================
+  📊 10-HIRE COHORT DEMONSTRATION METRICS SUMMARY
+=================================================================
+  • Total Cohort Candidates Processed:    8 Hires + 1 Off-Cycle + 1 DLQ
+  • Workday Employee Records Created:      8 records (WD-EMP-107 preserved)
+  • Okta Corporate Accounts Provisioned:   8 corporate users
+  • Lumos App Bundles Assigned:            8 departmental bundles
+  • Hardware Laptops Ordered:              8 MacBook Pro units
+  • Hardware Shipments Intercepted/Halted: 1 unit (Carlos Gomez - Post-ship conflict)
+  • Webhook Replays Safely Deduplicated:   1 replay (Alice Johnson)
+  • Malformed Payloads Sent to DLQ:        1 payload (H-109 invalid zip/name)
+  • Missed Webhooks Healed by Poller:      1 hire (H-110 Serena Williams)
+  • Active Cached Idempotency Keys:        11 unique hashes
+  • Total Immutable Audit Events Logged:   93 JSONL audit entries
+  • Total Slack Notifications Dispatched:  23 messages
+=================================================================
+```
+
+### 4. Run Individual Scenarios
 
 ```bash
 # Happy path: Standard Ashby offer -> Okta, Lumos, Laptop -> DAY1_READY

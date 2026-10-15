@@ -1,20 +1,20 @@
 {
   "hires": {
-    "HIRE-S07": {
-      "hire_id": "HIRE-S07",
-      "workday_id": "WD-HIRE-S07",
-      "ashby_id": "ASHBY-S07",
+    "H-101": {
+      "hire_id": "H-101",
+      "workday_id": "WD-H-101",
+      "ashby_id": "ASHBY-H-101",
       "source": "ASHBY",
-      "legal_first_name": "Serena",
-      "legal_last_name": "Williams",
+      "legal_first_name": "Alice",
+      "legal_last_name": "Johnson",
       "preferred_name": null,
-      "personal_email": "serena.williams@gmail.com",
-      "work_email": "serena.williams@betterup.com",
-      "job_title": "Software Engineer",
+      "personal_email": "alice.johnson@gmail.com",
+      "work_email": "alice.johnson@betterup.com",
+      "job_title": "Staff Software Engineer",
       "department": "Engineering",
       "team": "Platform",
       "manager_email": "manager@betterup.com",
-      "start_date": "2026-11-29",
+      "start_date": "2026-11-05",
       "shipping_address": {
         "street_line_1": "123 Market St",
         "street_line_2": null,
@@ -36,47 +36,591 @@
         "cohort_added_to_slack": true,
         "day1_orientation_scheduled": true
       },
-      "created_at": "2026-10-15 10:13:48.933569",
-      "updated_at": "2026-10-15 10:13:48.938804",
+      "created_at": "2026-10-15 10:32:09.846843",
+      "updated_at": "2026-10-15 10:32:09.849139",
+      "version": 16,
+      "conflict_reason": null,
+      "error_message": null
+    },
+    "H-102": {
+      "hire_id": "H-102",
+      "workday_id": "WD-H-102",
+      "ashby_id": "ASHBY-H-102",
+      "source": "ASHBY",
+      "legal_first_name": "Liam",
+      "legal_last_name": "Chen",
+      "preferred_name": null,
+      "personal_email": "liam.chen@gmail.com",
+      "work_email": "liam.chen@betterup.com",
+      "job_title": "Principal Product Manager",
+      "department": "Product",
+      "team": "Growth",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "shipping_address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "New York",
+        "state": "NY",
+        "zip_code": "10001",
+        "country": "US"
+      },
+      "laptop_model": "MacBook Pro 14\"",
+      "status": "DAY1_READY",
+      "okta_status": "PROVISIONED",
+      "equipment_status": "ORDERED",
+      "stage_gates": {
+        "background_check_complete": true,
+        "it_hardware_survey_submitted": true,
+        "okta_account_provisioned": true,
+        "lumos_access_assigned": true,
+        "equipment_ordered": true,
+        "cohort_added_to_slack": true,
+        "day1_orientation_scheduled": true
+      },
+      "created_at": "2026-10-15 10:32:09.851273",
+      "updated_at": "2026-10-15 10:32:09.853869",
+      "version": 16,
+      "conflict_reason": null,
+      "error_message": null
+    },
+    "H-103": {
+      "hire_id": "H-103",
+      "workday_id": "WD-H-103",
+      "ashby_id": "ASHBY-H-103",
+      "source": "ASHBY",
+      "legal_first_name": "Maya",
+      "legal_last_name": "Lin",
+      "preferred_name": null,
+      "personal_email": "maya.lin@gmail.com",
+      "work_email": "maya.lin@betterup.com",
+      "job_title": "Senior Product Designer",
+      "department": "Product",
+      "team": "Design",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "shipping_address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Seattle",
+        "state": "WA",
+        "zip_code": "98101",
+        "country": "US"
+      },
+      "laptop_model": "MacBook Pro 14\"",
+      "status": "DAY1_READY",
+      "okta_status": "PROVISIONED",
+      "equipment_status": "ORDERED",
+      "stage_gates": {
+        "background_check_complete": true,
+        "it_hardware_survey_submitted": true,
+        "okta_account_provisioned": true,
+        "lumos_access_assigned": true,
+        "equipment_ordered": true,
+        "cohort_added_to_slack": true,
+        "day1_orientation_scheduled": true
+      },
+      "created_at": "2026-10-15 10:32:09.856124",
+      "updated_at": "2026-10-15 10:32:09.859312",
+      "version": 16,
+      "conflict_reason": null,
+      "error_message": null
+    },
+    "H-104": {
+      "hire_id": "H-104",
+      "workday_id": "WD-H-104",
+      "ashby_id": "ASHBY-H-104",
+      "source": "ASHBY",
+      "legal_first_name": "David",
+      "legal_last_name": "Kim",
+      "preferred_name": null,
+      "personal_email": "david.kim@gmail.com",
+      "work_email": "david.kim@betterup.com",
+      "job_title": "Machine Learning Engineer",
+      "department": "Engineering",
+      "team": "Data/AI",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-26",
+      "shipping_address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Austin",
+        "state": "TX",
+        "zip_code": "78701",
+        "country": "US"
+      },
+      "laptop_model": "MacBook Pro 14\"",
+      "status": "DAY1_READY",
+      "okta_status": "PROVISIONED",
+      "equipment_status": "ORDERED",
+      "stage_gates": {
+        "background_check_complete": true,
+        "it_hardware_survey_submitted": true,
+        "okta_account_provisioned": true,
+        "lumos_access_assigned": true,
+        "equipment_ordered": true,
+        "cohort_added_to_slack": true,
+        "day1_orientation_scheduled": true
+      },
+      "created_at": "2026-10-15 10:32:09.863871",
+      "updated_at": "2026-10-15 10:32:09.900000",
       "version": 20,
+      "conflict_reason": null,
+      "error_message": null
+    },
+    "H-105": {
+      "hire_id": "H-105",
+      "workday_id": "WD-H-105",
+      "ashby_id": "ASHBY-H-105",
+      "source": "ASHBY",
+      "legal_first_name": "Zoe",
+      "legal_last_name": "Washington",
+      "preferred_name": null,
+      "personal_email": "zoe.washington@gmail.com",
+      "work_email": "zoe.washington@betterup.com",
+      "job_title": "Enterprise Account Exec",
+      "department": "Sales",
+      "team": "Enterprise",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "shipping_address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Chicago",
+        "state": "IL",
+        "zip_code": "60601",
+        "country": "US"
+      },
+      "laptop_model": "MacBook Pro 14\"",
+      "status": "DAY1_READY",
+      "okta_status": "PROVISIONED",
+      "equipment_status": "ORDERED",
+      "stage_gates": {
+        "background_check_complete": true,
+        "it_hardware_survey_submitted": true,
+        "okta_account_provisioned": true,
+        "lumos_access_assigned": true,
+        "equipment_ordered": true,
+        "cohort_added_to_slack": true,
+        "day1_orientation_scheduled": true
+      },
+      "created_at": "2026-10-15 10:32:09.875119",
+      "updated_at": "2026-10-15 10:32:09.880911",
+      "version": 16,
+      "conflict_reason": null,
+      "error_message": null
+    },
+    "H-106": {
+      "hire_id": "H-106",
+      "workday_id": "WD-H-106",
+      "ashby_id": "ASHBY-H-106",
+      "source": "ASHBY",
+      "legal_first_name": "Tariq",
+      "legal_last_name": "Al-Mansoor",
+      "preferred_name": null,
+      "personal_email": "tariq.al-mansoor@gmail.com",
+      "work_email": "tariq.almansoor@betterup.com",
+      "job_title": "Director of Growth Mktg",
+      "department": "Marketing",
+      "team": "Lifecycle",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "shipping_address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Boston",
+        "state": "MA",
+        "zip_code": "02108",
+        "country": "US"
+      },
+      "laptop_model": "MacBook Pro 14\"",
+      "status": "DAY1_READY",
+      "okta_status": "PROVISIONED",
+      "equipment_status": "ORDERED",
+      "stage_gates": {
+        "background_check_complete": true,
+        "it_hardware_survey_submitted": true,
+        "okta_account_provisioned": true,
+        "lumos_access_assigned": true,
+        "equipment_ordered": true,
+        "cohort_added_to_slack": true,
+        "day1_orientation_scheduled": true
+      },
+      "created_at": "2026-10-15 10:32:09.883294",
+      "updated_at": "2026-10-15 10:32:09.886502",
+      "version": 16,
+      "conflict_reason": null,
+      "error_message": null
+    },
+    "H-107": {
+      "hire_id": "H-107",
+      "workday_id": "WD-EMP-107",
+      "ashby_id": null,
+      "source": "WORKDAY",
+      "legal_first_name": "Rachel",
+      "legal_last_name": "Green",
+      "preferred_name": null,
+      "personal_email": "rachel.green@gmail.com",
+      "work_email": "rachel.green@betterup.com",
+      "job_title": "Software Engineer",
+      "department": "People",
+      "team": "Talent Acquisition",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "shipping_address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip_code": "90001",
+        "country": "US"
+      },
+      "laptop_model": "MacBook Pro 14\"",
+      "status": "DAY1_READY",
+      "okta_status": "PROVISIONED",
+      "equipment_status": "ORDERED",
+      "stage_gates": {
+        "background_check_complete": true,
+        "it_hardware_survey_submitted": true,
+        "okta_account_provisioned": true,
+        "lumos_access_assigned": true,
+        "equipment_ordered": true,
+        "cohort_added_to_slack": true,
+        "day1_orientation_scheduled": true
+      },
+      "created_at": "2026-10-15 10:32:09.888588",
+      "updated_at": "2026-10-15 10:32:09.892480",
+      "version": 16,
+      "conflict_reason": null,
+      "error_message": null
+    },
+    "H-108": {
+      "hire_id": "H-108",
+      "workday_id": "WD-H-108",
+      "ashby_id": "ASHBY-H-108",
+      "source": "ASHBY",
+      "legal_first_name": "Carlos",
+      "legal_last_name": "Gomez",
+      "preferred_name": null,
+      "personal_email": "carlos.gomez@gmail.com",
+      "work_email": "carlos.gomez@betterup.com",
+      "job_title": "Software Engineer",
+      "department": "Engineering",
+      "team": "Infrastructure",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "shipping_address": {
+        "street_line_1": "500 Ocean Dr",
+        "street_line_2": null,
+        "city": "Miami Beach",
+        "state": "FL",
+        "zip_code": "33139",
+        "country": "US"
+      },
+      "laptop_model": "MacBook Pro 14\"",
+      "status": "CONFLICT_PAUSED",
+      "okta_status": "PROVISIONED",
+      "equipment_status": "SHIPPED",
+      "stage_gates": {
+        "background_check_complete": true,
+        "it_hardware_survey_submitted": true,
+        "okta_account_provisioned": true,
+        "lumos_access_assigned": true,
+        "equipment_ordered": true,
+        "cohort_added_to_slack": true,
+        "day1_orientation_scheduled": true
+      },
+      "created_at": "2026-10-15 10:32:09.902924",
+      "updated_at": "2026-10-15 10:32:09.910828",
+      "version": 19,
+      "conflict_reason": "Shipping address changed for Carlos Gomez but equipment is already SHIPPED. Old address: 100 First St, Miami, FL 33101. New address: 500 Ocean Dr, Miami Beach, FL 33139.",
+      "error_message": null
+    },
+    "H-110": {
+      "hire_id": "H-110",
+      "workday_id": "WD-H-110",
+      "ashby_id": "ASHBY-H-110",
+      "source": "ASHBY",
+      "legal_first_name": "Serena",
+      "legal_last_name": "Williams",
+      "preferred_name": null,
+      "personal_email": "serena.williams@gmail.com",
+      "work_email": "serena.williams@betterup.com",
+      "job_title": "Software Engineer",
+      "department": "People",
+      "team": "Executive",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "shipping_address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Atlanta",
+        "state": "GA",
+        "zip_code": "30301",
+        "country": "US"
+      },
+      "laptop_model": "MacBook Pro 14\"",
+      "status": "DAY1_READY",
+      "okta_status": "PROVISIONED",
+      "equipment_status": "ORDERED",
+      "stage_gates": {
+        "background_check_complete": true,
+        "it_hardware_survey_submitted": true,
+        "okta_account_provisioned": true,
+        "lumos_access_assigned": true,
+        "equipment_ordered": true,
+        "cohort_added_to_slack": true,
+        "day1_orientation_scheduled": true
+      },
+      "created_at": "2026-10-15 10:32:09.919866",
+      "updated_at": "2026-10-15 10:32:09.925016",
+      "version": 16,
       "conflict_reason": null,
       "error_message": null
     }
   },
   "employees": {
-    "WD-HIRE-S07": {
-      "workday_id": "WD-HIRE-S07",
-      "hire_id": "HIRE-S07",
+    "WD-H-101": {
+      "workday_id": "WD-H-101",
+      "hire_id": "H-101",
+      "legal_first_name": "Alice",
+      "legal_last_name": "Johnson",
+      "personal_email": "alice.johnson@gmail.com",
+      "job_title": "Staff Software Engineer",
+      "department": "Engineering",
+      "team": "Platform",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "created_at": "2026-10-15T10:32:09.847082",
+      "updated_at": "2026-10-15T10:32:09.847083"
+    },
+    "WD-H-102": {
+      "workday_id": "WD-H-102",
+      "hire_id": "H-102",
+      "legal_first_name": "Liam",
+      "legal_last_name": "Chen",
+      "personal_email": "liam.chen@gmail.com",
+      "job_title": "Principal Product Manager",
+      "department": "Product",
+      "team": "Growth",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "created_at": "2026-10-15T10:32:09.851420",
+      "updated_at": "2026-10-15T10:32:09.851422"
+    },
+    "WD-H-103": {
+      "workday_id": "WD-H-103",
+      "hire_id": "H-103",
+      "legal_first_name": "Maya",
+      "legal_last_name": "Lin",
+      "personal_email": "maya.lin@gmail.com",
+      "job_title": "Senior Product Designer",
+      "department": "Product",
+      "team": "Design",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "created_at": "2026-10-15T10:32:09.856284",
+      "updated_at": "2026-10-15T10:32:09.856285"
+    },
+    "WD-H-104": {
+      "workday_id": "WD-H-104",
+      "hire_id": "H-104",
+      "legal_first_name": "David",
+      "legal_last_name": "Kim",
+      "personal_email": "david.kim@gmail.com",
+      "job_title": "Machine Learning Engineer",
+      "department": "Engineering",
+      "team": "Data/AI",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-26",
+      "created_at": "2026-10-15T10:32:09.864547",
+      "updated_at": "2026-10-15T10:32:09.897415"
+    },
+    "WD-H-105": {
+      "workday_id": "WD-H-105",
+      "hire_id": "H-105",
+      "legal_first_name": "Zoe",
+      "legal_last_name": "Washington",
+      "personal_email": "zoe.washington@gmail.com",
+      "job_title": "Enterprise Account Exec",
+      "department": "Sales",
+      "team": "Enterprise",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "created_at": "2026-10-15T10:32:09.875308",
+      "updated_at": "2026-10-15T10:32:09.875310"
+    },
+    "WD-H-106": {
+      "workday_id": "WD-H-106",
+      "hire_id": "H-106",
+      "legal_first_name": "Tariq",
+      "legal_last_name": "Al-Mansoor",
+      "personal_email": "tariq.al-mansoor@gmail.com",
+      "job_title": "Director of Growth Mktg",
+      "department": "Marketing",
+      "team": "Lifecycle",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "created_at": "2026-10-15T10:32:09.883481",
+      "updated_at": "2026-10-15T10:32:09.883482"
+    },
+    "WD-EMP-107": {
+      "workday_id": "WD-EMP-107",
+      "hire_id": "H-107",
+      "legal_first_name": "Rachel",
+      "legal_last_name": "Green",
+      "personal_email": "rachel.green@gmail.com",
+      "job_title": "Software Engineer",
+      "department": "People",
+      "team": "Talent Acquisition",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "created_at": "2026-10-15T10:32:09.888854",
+      "updated_at": "2026-10-15T10:32:09.888856"
+    },
+    "WD-H-108": {
+      "workday_id": "WD-H-108",
+      "hire_id": "H-108",
+      "legal_first_name": "Carlos",
+      "legal_last_name": "Gomez",
+      "personal_email": "carlos.gomez@gmail.com",
+      "job_title": "Software Engineer",
+      "department": "Engineering",
+      "team": "Infrastructure",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "created_at": "2026-10-15T10:32:09.903152",
+      "updated_at": "2026-10-15T10:32:09.903153"
+    },
+    "WD-H-110": {
+      "workday_id": "WD-H-110",
+      "hire_id": "H-110",
       "legal_first_name": "Serena",
       "legal_last_name": "Williams",
       "personal_email": "serena.williams@gmail.com",
       "job_title": "Software Engineer",
-      "department": "Engineering",
-      "team": "Platform",
+      "department": "People",
+      "team": "Executive",
       "manager_email": "manager@betterup.com",
-      "start_date": "2026-11-29",
-      "created_at": "2026-10-15T10:13:48.933751",
-      "updated_at": "2026-10-15T10:13:48.938237"
+      "start_date": "2026-11-05",
+      "created_at": "2026-10-15T10:32:09.920118",
+      "updated_at": "2026-10-15T10:32:09.920120"
     }
   },
   "okta_users": {
-    "HIRE-S07": {
-      "hire_id": "HIRE-S07",
+    "H-101": {
+      "hire_id": "H-101",
+      "work_email": "alice.johnson@betterup.com",
+      "legal_first_name": "Alice",
+      "legal_last_name": "Johnson",
+      "job_title": "Staff Software Engineer",
+      "department": "Engineering",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "status": "PROVISIONED",
+      "provisioned_at": "2026-10-15T10:32:09.847312"
+    },
+    "H-102": {
+      "hire_id": "H-102",
+      "work_email": "liam.chen@betterup.com",
+      "legal_first_name": "Liam",
+      "legal_last_name": "Chen",
+      "job_title": "Principal Product Manager",
+      "department": "Product",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "status": "PROVISIONED",
+      "provisioned_at": "2026-10-15T10:32:09.852337"
+    },
+    "H-103": {
+      "hire_id": "H-103",
+      "work_email": "maya.lin@betterup.com",
+      "legal_first_name": "Maya",
+      "legal_last_name": "Lin",
+      "job_title": "Senior Product Designer",
+      "department": "Product",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "status": "PROVISIONED",
+      "provisioned_at": "2026-10-15T10:32:09.856920"
+    },
+    "H-104": {
+      "hire_id": "H-104",
+      "work_email": "david.kim@betterup.com",
+      "legal_first_name": "David",
+      "legal_last_name": "Kim",
+      "job_title": "Machine Learning Engineer",
+      "department": "Engineering",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-26",
+      "status": "PROVISIONED",
+      "provisioned_at": "2026-10-15T10:32:09.865254",
+      "updated_at": "2026-10-15T10:32:09.896715"
+    },
+    "H-105": {
+      "hire_id": "H-105",
+      "work_email": "zoe.washington@betterup.com",
+      "legal_first_name": "Zoe",
+      "legal_last_name": "Washington",
+      "job_title": "Enterprise Account Exec",
+      "department": "Sales",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "status": "PROVISIONED",
+      "provisioned_at": "2026-10-15T10:32:09.876873"
+    },
+    "H-106": {
+      "hire_id": "H-106",
+      "work_email": "tariq.almansoor@betterup.com",
+      "legal_first_name": "Tariq",
+      "legal_last_name": "Al-Mansoor",
+      "job_title": "Director of Growth Mktg",
+      "department": "Marketing",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "status": "PROVISIONED",
+      "provisioned_at": "2026-10-15T10:32:09.884069"
+    },
+    "H-107": {
+      "hire_id": "H-107",
+      "work_email": "rachel.green@betterup.com",
+      "legal_first_name": "Rachel",
+      "legal_last_name": "Green",
+      "job_title": "Software Engineer",
+      "department": "People",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "status": "PROVISIONED",
+      "provisioned_at": "2026-10-15T10:32:09.889525"
+    },
+    "H-108": {
+      "hire_id": "H-108",
+      "work_email": "carlos.gomez@betterup.com",
+      "legal_first_name": "Carlos",
+      "legal_last_name": "Gomez",
+      "job_title": "Software Engineer",
+      "department": "Engineering",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-05",
+      "status": "PROVISIONED",
+      "provisioned_at": "2026-10-15T10:32:09.903998"
+    },
+    "H-110": {
+      "hire_id": "H-110",
       "work_email": "serena.williams@betterup.com",
       "legal_first_name": "Serena",
       "legal_last_name": "Williams",
       "job_title": "Software Engineer",
-      "department": "Engineering",
+      "department": "People",
       "manager_email": "manager@betterup.com",
-      "start_date": "2026-11-29",
+      "start_date": "2026-11-05",
       "status": "PROVISIONED",
-      "provisioned_at": "2026-10-15T10:13:48.933973",
-      "updated_at": "2026-10-15T10:13:48.937912"
+      "provisioned_at": "2026-10-15T10:32:09.921031"
     }
   },
   "lumos_access": {
-    "HIRE-S07": {
-      "hire_id": "HIRE-S07",
+    "H-101": {
+      "hire_id": "H-101",
       "department": "Engineering",
       "team": "Platform",
       "apps": [
@@ -87,15 +631,129 @@
         "datadog",
         "aws"
       ],
-      "assigned_at": "2026-10-15T10:13:48.934186",
+      "assigned_at": "2026-10-15T10:32:09.847621",
+      "status": "ACTIVE"
+    },
+    "H-102": {
+      "hire_id": "H-102",
+      "department": "Product",
+      "team": "Growth",
+      "apps": [
+        "jira",
+        "confluence",
+        "figma",
+        "notion",
+        "mixpanel"
+      ],
+      "assigned_at": "2026-10-15T10:32:09.852713",
+      "status": "ACTIVE"
+    },
+    "H-103": {
+      "hire_id": "H-103",
+      "department": "Product",
+      "team": "Design",
+      "apps": [
+        "jira",
+        "confluence",
+        "figma",
+        "notion",
+        "mixpanel"
+      ],
+      "assigned_at": "2026-10-15T10:32:09.857425",
+      "status": "ACTIVE"
+    },
+    "H-104": {
+      "hire_id": "H-104",
+      "department": "Engineering",
+      "team": "Data/AI",
+      "apps": [
+        "github",
+        "jira",
+        "confluence",
+        "figma",
+        "datadog",
+        "aws"
+      ],
+      "assigned_at": "2026-10-15T10:32:09.866524",
+      "status": "ACTIVE"
+    },
+    "H-105": {
+      "hire_id": "H-105",
+      "department": "Sales",
+      "team": "Enterprise",
+      "apps": [
+        "salesforce",
+        "outreach",
+        "zoom",
+        "slack",
+        "notion"
+      ],
+      "assigned_at": "2026-10-15T10:32:09.878586",
+      "status": "ACTIVE"
+    },
+    "H-106": {
+      "hire_id": "H-106",
+      "department": "Marketing",
+      "team": "Lifecycle",
+      "apps": [
+        "hubspot",
+        "notion",
+        "canva",
+        "figma",
+        "google-analytics"
+      ],
+      "assigned_at": "2026-10-15T10:32:09.884627",
+      "status": "ACTIVE"
+    },
+    "H-107": {
+      "hire_id": "H-107",
+      "department": "People",
+      "team": "Talent Acquisition",
+      "apps": [
+        "workday",
+        "ashby",
+        "lattice",
+        "notion",
+        "greenhouse"
+      ],
+      "assigned_at": "2026-10-15T10:32:09.890434",
+      "status": "ACTIVE"
+    },
+    "H-108": {
+      "hire_id": "H-108",
+      "department": "Engineering",
+      "team": "Infrastructure",
+      "apps": [
+        "github",
+        "jira",
+        "confluence",
+        "figma",
+        "datadog",
+        "aws"
+      ],
+      "assigned_at": "2026-10-15T10:32:09.904728",
+      "status": "ACTIVE"
+    },
+    "H-110": {
+      "hire_id": "H-110",
+      "department": "People",
+      "team": "Executive",
+      "apps": [
+        "workday",
+        "ashby",
+        "lattice",
+        "notion",
+        "greenhouse"
+      ],
+      "assigned_at": "2026-10-15T10:32:09.922052",
       "status": "ACTIVE"
     }
   },
   "equipment_orders": {
-    "HIRE-S07": {
-      "order_id": "ORDER-HIRE-S07",
-      "hire_id": "HIRE-S07",
-      "recipient_name": "Serena Williams",
+    "H-101": {
+      "order_id": "ORDER-H-101",
+      "hire_id": "H-101",
+      "recipient_name": "Alice Johnson",
       "laptop_model": "MacBook Pro 14\"",
       "address": {
         "street_line_1": "123 Market St",
@@ -106,7 +764,167 @@
         "country": "US"
       },
       "status": "ORDERED",
-      "ordered_at": "2026-10-15T10:13:48.934399",
+      "ordered_at": "2026-10-15T10:32:09.848004",
+      "shipped_at": null,
+      "delivered_at": null,
+      "cancelled_at": null,
+      "tracking_number": null
+    },
+    "H-102": {
+      "order_id": "ORDER-H-102",
+      "hire_id": "H-102",
+      "recipient_name": "Liam Chen",
+      "laptop_model": "MacBook Pro 14\"",
+      "address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "New York",
+        "state": "NY",
+        "zip_code": "10001",
+        "country": "US"
+      },
+      "status": "ORDERED",
+      "ordered_at": "2026-10-15T10:32:09.853070",
+      "shipped_at": null,
+      "delivered_at": null,
+      "cancelled_at": null,
+      "tracking_number": null
+    },
+    "H-103": {
+      "order_id": "ORDER-H-103",
+      "hire_id": "H-103",
+      "recipient_name": "Maya Lin",
+      "laptop_model": "MacBook Pro 14\"",
+      "address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Seattle",
+        "state": "WA",
+        "zip_code": "98101",
+        "country": "US"
+      },
+      "status": "ORDERED",
+      "ordered_at": "2026-10-15T10:32:09.857875",
+      "shipped_at": null,
+      "delivered_at": null,
+      "cancelled_at": null,
+      "tracking_number": null
+    },
+    "H-104": {
+      "order_id": "ORDER-H-104",
+      "hire_id": "H-104",
+      "recipient_name": "David Kim",
+      "laptop_model": "MacBook Pro 14\"",
+      "address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Austin",
+        "state": "TX",
+        "zip_code": "78701",
+        "country": "US"
+      },
+      "status": "ORDERED",
+      "ordered_at": "2026-10-15T10:32:09.867166",
+      "shipped_at": null,
+      "delivered_at": null,
+      "cancelled_at": null,
+      "tracking_number": null
+    },
+    "H-105": {
+      "order_id": "ORDER-H-105",
+      "hire_id": "H-105",
+      "recipient_name": "Zoe Washington",
+      "laptop_model": "MacBook Pro 14\"",
+      "address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Chicago",
+        "state": "IL",
+        "zip_code": "60601",
+        "country": "US"
+      },
+      "status": "ORDERED",
+      "ordered_at": "2026-10-15T10:32:09.879286",
+      "shipped_at": null,
+      "delivered_at": null,
+      "cancelled_at": null,
+      "tracking_number": null
+    },
+    "H-106": {
+      "order_id": "ORDER-H-106",
+      "hire_id": "H-106",
+      "recipient_name": "Tariq Al-Mansoor",
+      "laptop_model": "MacBook Pro 14\"",
+      "address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Boston",
+        "state": "MA",
+        "zip_code": "02108",
+        "country": "US"
+      },
+      "status": "ORDERED",
+      "ordered_at": "2026-10-15T10:32:09.885320",
+      "shipped_at": null,
+      "delivered_at": null,
+      "cancelled_at": null,
+      "tracking_number": null
+    },
+    "H-107": {
+      "order_id": "ORDER-H-107",
+      "hire_id": "H-107",
+      "recipient_name": "Rachel Green",
+      "laptop_model": "MacBook Pro 14\"",
+      "address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip_code": "90001",
+        "country": "US"
+      },
+      "status": "ORDERED",
+      "ordered_at": "2026-10-15T10:32:09.891188",
+      "shipped_at": null,
+      "delivered_at": null,
+      "cancelled_at": null,
+      "tracking_number": null
+    },
+    "H-108": {
+      "order_id": "ORDER-H-108",
+      "hire_id": "H-108",
+      "recipient_name": "Carlos Gomez",
+      "laptop_model": "MacBook Pro 14\"",
+      "address": {
+        "street_line_1": "100 First St",
+        "street_line_2": null,
+        "city": "Miami",
+        "state": "FL",
+        "zip_code": "33101",
+        "country": "US"
+      },
+      "status": "SHIPPED",
+      "ordered_at": "2026-10-15T10:32:09.905459",
+      "shipped_at": "2026-10-15T10:32:09.909412",
+      "delivered_at": null,
+      "cancelled_at": null,
+      "tracking_number": "FEDEX-794611200388"
+    },
+    "H-110": {
+      "order_id": "ORDER-H-110",
+      "hire_id": "H-110",
+      "recipient_name": "Serena Williams",
+      "laptop_model": "MacBook Pro 14\"",
+      "address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "Atlanta",
+        "state": "GA",
+        "zip_code": "30301",
+        "country": "US"
+      },
+      "status": "ORDERED",
+      "ordered_at": "2026-10-15T10:32:09.923100",
       "shipped_at": null,
       "delivered_at": null,
       "cancelled_at": null,
@@ -115,46 +933,165 @@
   },
   "slack_messages": [
     {
-      "msg_id": "slack_1792039429",
+      "msg_id": "slack_1792040530",
       "recipient": "#day1-cohort-oct",
-      "message": "\ud83d\udc4b Welcome to your cohort, Serena Williams! Starting 2026-11-12 as Software Engineer.",
+      "message": "\ud83d\udc4b Welcome to your cohort, Alice Johnson! Starting 2026-11-05 as Staff Software Engineer.",
       "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T10:13:48.934638"
+      "sent_at": "2026-10-15T10:32:09.848478"
     },
     {
-      "msg_id": "slack_1792039429",
+      "msg_id": "slack_1792040530",
       "recipient": "#day1-cohort-oct",
-      "message": "\u2705 *Day-1 Ready: Serena Williams*\n> Title: Software Engineer | Dept: Engineering | Team: Platform\n> Start Date: 2026-11-12 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 San Francisco, CA",
+      "message": "\u2705 *Day-1 Ready: Alice Johnson*\n> Title: Staff Software Engineer | Dept: Engineering | Team: Platform\n> Start Date: 2026-11-05 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 San Francisco, CA",
       "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T10:13:48.934974"
+      "sent_at": "2026-10-15T10:32:09.849236"
     },
     {
-      "msg_id": "slack_1792039429",
-      "recipient": "#people-ops-alerts",
-      "message": "\ud83d\udea8 *Reconciliation Sweep Completed (RECON-1792039428)*\nScanned 1 records.\n\u2022 Healed Missed Hires: 1\n\u2022 Healed Data Drift: 0\n\u2022 Conflicts Paused: 0",
-      "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T10:13:48.936325"
-    },
-    {
-      "msg_id": "slack_1792039429",
-      "recipient": "#people-ops-alerts",
-      "message": "\ud83d\udea8 *Start Date Updated \u2014 Serena Williams*\nNew start date: 2026-11-29. Cohort and equipment schedule updated.",
-      "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T10:13:48.938493"
-    },
-    {
-      "msg_id": "slack_1792039429",
+      "msg_id": "slack_1792040530",
       "recipient": "#day1-cohort-oct",
-      "message": "\u2705 *Day-1 Ready: Serena Williams*\n> Title: Software Engineer | Dept: Engineering | Team: Platform\n> Start Date: 2026-11-29 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 San Francisco, CA",
+      "message": "\ud83d\udc4b Welcome to your cohort, Liam Chen! Starting 2026-11-05 as Principal Product Manager.",
       "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T10:13:48.938857"
+      "sent_at": "2026-10-15T10:32:09.853418"
     },
     {
-      "msg_id": "slack_1792039429",
-      "recipient": "#people-ops-alerts",
-      "message": "\ud83d\udea8 *Reconciliation Sweep Completed (RECON-1792039428)*\nScanned 1 records.\n\u2022 Healed Missed Hires: 0\n\u2022 Healed Data Drift: 1\n\u2022 Conflicts Paused: 0",
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: Liam Chen*\n> Title: Principal Product Manager | Dept: Product | Team: Growth\n> Start Date: 2026-11-05 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 New York, NY",
       "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T10:13:48.940111"
+      "sent_at": "2026-10-15T10:32:09.853954"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\ud83d\udc4b Welcome to your cohort, Maya Lin! Starting 2026-11-05 as Senior Product Designer.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.858759"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: Maya Lin*\n> Title: Senior Product Designer | Dept: Product | Team: Design\n> Start Date: 2026-11-05 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 Seattle, WA",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.859388"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\ud83d\udc4b Welcome to your cohort, David Kim! Starting 2026-11-05 as Machine Learning Engineer.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.867768"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: David Kim*\n> Title: Machine Learning Engineer | Dept: Engineering | Team: Data/AI\n> Start Date: 2026-11-05 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 Austin, TX",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.869319"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\ud83d\udc4b Welcome to your cohort, Zoe Washington! Starting 2026-11-05 as Enterprise Account Exec.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.880224"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: Zoe Washington*\n> Title: Enterprise Account Exec | Dept: Sales | Team: Enterprise\n> Start Date: 2026-11-05 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 Chicago, IL",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.881009"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\ud83d\udc4b Welcome to your cohort, Tariq Al-Mansoor! Starting 2026-11-05 as Director of Growth Mktg.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.885915"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: Tariq Al-Mansoor*\n> Title: Director of Growth Mktg | Dept: Marketing | Team: Lifecycle\n> Start Date: 2026-11-05 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 Boston, MA",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.886618"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\ud83d\udc4b Welcome to your cohort, Rachel Green! Starting 2026-11-05 as Software Engineer.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.891871"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: Rachel Green*\n> Title: Software Engineer | Dept: People | Team: Talent Acquisition\n> Start Date: 2026-11-05 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 Los Angeles, CA",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.892583"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#people-ops-alerts",
+      "message": "\ud83d\udea8 *Start Date Updated \u2014 David Kim*\nNew start date: 2026-11-26. Cohort and equipment schedule updated.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.898889"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: David Kim*\n> Title: Machine Learning Engineer | Dept: Engineering | Team: Data/AI\n> Start Date: 2026-11-26 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 Austin, TX",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.900134"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\ud83d\udc4b Welcome to your cohort, Carlos Gomez! Starting 2026-11-05 as Software Engineer.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.906304"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: Carlos Gomez*\n> Title: Software Engineer | Dept: Engineering | Team: Infrastructure\n> Start Date: 2026-11-05 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 Miami, FL",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.907419"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#people-ops-alerts",
+      "message": "\ud83d\udea8 *Onboarding Conflict \u2014 Carlos Gomez [ADDRESS_CHANGED_POST_SHIP]*\nAuto-escalated (Gemini unavailable): Gemini API error: google-generativeai package not installed. Run: pip3 install google-generativeai\n\nConflict: Shipping address changed for Carlos Gomez but equipment is already SHIPPED. Old address: 100 First St, Miami, FL 33101. New address: 500 Ocean Dr, Miami Beach, FL 33139.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.911256"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#people-ops-alerts",
+      "message": "\ud83d\udea8 *Dead Letter: hire_id=H-109*\nError: 2 validation errors for Address\nstate\n  Value error, State must be a 2-letter code, got: 'CALIFORNIA' [type=value_error, input_value='CALIFORNIA', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error\nzip_code\n  Value error, Invalid US zip code format: 'INVALID' [type=value_error, input_value='INVALID', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.914114"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\ud83d\udc4b Welcome to your cohort, Serena Williams! Starting 2026-11-05 as Software Engineer.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.924187"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: Serena Williams*\n> Title: Software Engineer | Dept: People | Team: Executive\n> Start Date: 2026-11-05 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 Atlanta, GA",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.925156"
+    },
+    {
+      "msg_id": "slack_1792040530",
+      "recipient": "#people-ops-alerts",
+      "message": "\ud83d\udea8 *Reconciliation Sweep Completed (RECON-1792040529)*\nScanned 9 records.\n\u2022 Healed Missed Hires: 1\n\u2022 Healed Data Drift: 0\n\u2022 Conflicts Paused: 0",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T10:32:09.928157"
     }
   ]
 }

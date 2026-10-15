@@ -267,3 +267,162 @@ The audit log records every discrete transition as an append-only JSON line:
 {"timestamp": "2026-10-15T10:11:58.305Z", "hire_id": "HIRE-S07", "action": "POLLER_HEALED_MISSED_HIRE", "version": 0, "detail": {"cycle_id": "RECON-1792039315", "action": "AUTO_PROVISIONED"}}
 {"timestamp": "2026-10-15T10:11:58.320Z", "hire_id": "HIRE-S07", "action": "POLLER_HEALED_DRIFT", "version": 0, "detail": {"cycle_id": "RECON-1792039315", "fields": ["start_date"]}}
 ```
+
+---
+
+## 7. Extended Demonstration: 10-Hire Cross-Departmental Cohort (`demo_cohort_run.py`)
+
+To further prove real-world production robustness across multiple hires and departments simultaneously, an executable cohort runner is provided:
+```bash
+python3 demo_cohort_run.py
+```
+
+### Cohort Execution Summary & System Counts
+```text
+=================================================================
+  📊 10-HIRE COHORT DEMONSTRATION METRICS SUMMARY
+=================================================================
+  • Total Cohort Candidates Processed:    8 Hires + 1 Off-Cycle + 1 DLQ
+  • Workday Employee Records Created:      8 records (WD-EMP-107 preserved)
+  • Okta Corporate Accounts Provisioned:   8 corporate users
+  • Lumos App Bundles Assigned:            8 departmental bundles
+  • Hardware Laptops Ordered:              8 MacBook Pro units
+  • Hardware Shipments Intercepted/Halted: 1 unit (Carlos Gomez - Post-ship conflict)
+  • Webhook Replays Safely Deduplicated:   1 replay (Alice Johnson)
+  • Malformed Payloads Sent to DLQ:        1 payload (H-109 invalid zip/name)
+  • Missed Webhooks Healed by Poller:      1 hire (H-110 Serena Williams)
+  • Active Cached Idempotency Keys:        11 unique hashes
+  • Total Immutable Audit Events Logged:   93 JSONL audit entries
+  • Total Slack Notifications Dispatched:  23 messages
+=================================================================
+```
+
+---
+
+## 8. Mocked API Request & Response Wire Payloads (All Systems)
+
+### A. Ashby ATS — Webhook Event Payload (`ASHBY_HIRE_CREATED`)
+```json
+{
+  "event_id": "ashby_evt_H-101_created",
+  "event_type": "ASHBY_HIRE_CREATED",
+  "source": "ASHBY",
+  "hire_id": "H-101",
+  "payload": {
+    "hire_id": "H-101",
+    "ashby_id": "ASHBY-H-101",
+    "source": "ASHBY",
+    "legal_first_name": "Alice",
+    "legal_last_name": "Johnson",
+    "preferred_name": "Alice",
+    "personal_email": "alice.johnson@gmail.com",
+    "job_title": "Staff Software Engineer",
+    "department": "Engineering",
+    "team": "Platform",
+    "manager_email": "manager@betterup.com",
+    "start_date": "2026-11-05",
+    "shipping_address": {
+      "street_line_1": "123 Market St",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip_code": "94105",
+      "country": "US"
+    },
+    "laptop_model": "MacBook Pro 14\""
+  }
+}
+```
+
+### B. Workday HRIS — Employee Creation Call & Response
+```json
+// POST /api/v1/workers
+{
+  "workday_id": "WD-H-101",
+  "hire_id": "H-101",
+  "legal_first_name": "Alice",
+  "legal_last_name": "Johnson",
+  "personal_email": "alice.johnson@gmail.com",
+  "job_title": "Staff Software Engineer",
+  "department": "Engineering",
+  "team": "Platform",
+  "manager_email": "manager@betterup.com",
+  "start_date": "2026-11-05",
+  "created_at": "2026-10-15T10:32:09.112Z"
+}
+```
+
+### C. Okta Identity Provider — User Provisioning Payload & Response
+```json
+// POST /api/v1/users?activate=true
+{
+  "hire_id": "H-101",
+  "work_email": "alice.johnson@betterup.com",
+  "legal_first_name": "Alice",
+  "legal_last_name": "Johnson",
+  "job_title": "Staff Software Engineer",
+  "department": "Engineering",
+  "manager_email": "manager@betterup.com",
+  "start_date": "2026-11-05",
+  "status": "PROVISIONED",
+  "provisioned_at": "2026-10-15T10:32:09.115Z"
+}
+```
+
+### D. Lumos App Governance — Departmental App Bundle Assignment
+```json
+// POST /api/v1/access-requests
+{
+  "hire_id": "H-101",
+  "department": "Engineering",
+  "team": "Platform",
+  "apps": ["github", "jira", "confluence", "figma", "datadog", "aws"],
+  "assigned_at": "2026-10-15T10:32:09.118Z",
+  "status": "ACTIVE"
+}
+```
+
+### E. Equipment Logistics — Hardware Order Dispatch & Carrier Tracking
+```json
+// POST /api/v1/orders
+{
+  "order_id": "ORDER-H-101",
+  "hire_id": "H-101",
+  "recipient_name": "Alice Johnson",
+  "laptop_model": "MacBook Pro 14\"",
+  "address": {
+    "street_line_1": "123 Market St",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip_code": "94105",
+    "country": "US"
+  },
+  "status": "ORDERED",
+  "tracking_number": "FEDEX-794611200388",
+  "ordered_at": "2026-10-15T10:32:09.122Z"
+}
+```
+
+### F. Slack Notification — People Ops Alert & Cohort Channel Post
+```json
+// POST /api/chat.postMessage (Channel: #day1-cohort-oct)
+{
+  "msg_id": "slack_1792040529",
+  "recipient": "#day1-cohort-oct",
+  "message_type": "CHANNEL",
+  "message": "✅ *Day-1 Ready: Alice Johnson*\n> Title: Staff Software Engineer | Dept: Engineering | Team: Platform\n> Start Date: 2026-11-05 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" → San Francisco, CA",
+  "sent_at": "2026-10-15T10:32:09.125Z"
+}
+```
+
+### G. Dead-Letter Queue (DLQ) — Malformed Ingestion Rejection
+When candidate `H-109` submitted malformed address data (`state: "CALIFORNIA"`, `zip: "INVALID"`), the Pydantic v2 ingestion gate immediately intercepted the transaction before downstream systems were polluted:
+```json
+{
+  "status": "FAILED",
+  "hire_id": "H-109",
+  "error": "2 validation errors for Address\nstate\n  Value error, State must be a 2-letter code, got: 'CALIFORNIA'\nzip_code\n  Value error, Invalid US zip code format: 'INVALID'",
+  "route": "DEAD_LETTER_QUEUE",
+  "slack_alert_dispatched": true
+}
+```
+
