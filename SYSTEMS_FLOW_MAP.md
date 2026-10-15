@@ -1,7 +1,7 @@
 # 🗺️ BetterUp Onboarding Architecture & Systems Flow Map
 ## Slice A: Change Propagation & Event Reconciliation Engine
 
-This document maps out how data moves across systems, where the state transitions happen, and how deterministic logic pairs with AI exception handling.
+This document provides visual diagrams mapping how data moves across systems, how concurrent calls are serialized without race conditions, how dropped webhooks are self-healed, and how state transitions occur.
 
 ---
 
@@ -9,7 +9,7 @@ This document maps out how data moves across systems, where the state transition
 
 ```mermaid
 flowchart TD
-    subgraph Sources["📥 Ingestion Sources"]
+    subgraph Ingestion["📥 Ingestion Sources"]
         Ashby["<b>Ashby ATS</b><br/>Offer Accepted / Candidate Edits"]
         WorkdaySrc["<b>Workday HRIS</b><br/>Off-cycle Hire / Direct Edits"]
         Poller["<b>Reconciliation Poller</b><br/>orchestrator/poller.py<br/><i>Periodic Sweep / Self-Healing</i>"]
@@ -17,7 +17,8 @@ flowchart TD
 
     subgraph CoreEngine["⚙️ Reconciliation Engine (Core Logic)"]
         Ingest["<b>Pipeline Ingestion</b><br/>orchestrator/pipeline.py"]
-        LockMgr["<b>Per-Hire Lock Manager & OCC</b><br/><i>Serializes concurrent webhooks</i>"]
+        LockMgr["<b>Per-Hire Lock Manager</b><br/><i>threading.RLock per hire_id</i>"]
+        OCCCheck{"<b>OCC Version Check</b><br/><i>expected_version == current?</i>"}
         IdemCheck{"<b>Idempotency Check</b><br/>core/idempotency.py<br/><i>SHA256(hire_id + payload)</i>"}
         SchemaVal["<b>Schema Validation</b><br/>core/models/hire_state.py<br/><i>Pydantic v2 Canonical Contract</i>"]
         Reconciler["<b>Diff & Risk Evaluator</b><br/>core/reconciler.py<br/><i>Compares Old vs New State</i>"]
@@ -47,16 +48,22 @@ flowchart TD
     subgraph Persistence["💾 Audit & Storage"]
         AuditLog[("<b>Immutable Audit Log</b><br/>audit/event_log.jsonl")]
         IdemDB[("<b>Idempotency Store</b><br/>SQLite: data/idempotency.db")]
-        MockDB[("<b>Systems State Store</b><br/>data/mock_db.json")]
+        MockDB[("<b>Systems State Store</b><br/>data/mock_db.json (Thread-Safe)")]
     end
 
-    %% Flow connections
+    %% Wiring
     Ashby -->|Webhook Event| Ingest
     WorkdaySrc -->|Webhook Event| Ingest
-    Ingest --> IdemCheck
+    Poller -->|Synthesized Event on Drift| Ingest
+
+    Ingest --> LockMgr
+    LockMgr --> IdemCheck
     
-    IdemCheck -->|Duplicate Key| SkipLog["Discard / No-op"]
-    IdemCheck -->|New Event| SchemaVal
+    IdemCheck -->|Duplicate Key| SkipLog["Discard / No-op (SKIPPED)"]
+    IdemCheck -->|New Event| OCCCheck
+
+    OCCCheck -->|Stale Version Detected| OCCPause["Pause Event (OCC Collision)"]
+    OCCCheck -->|Version Valid| SchemaVal
     
     SchemaVal --> StateMachine
     StateMachine --> Reconciler
@@ -79,62 +86,81 @@ flowchart TD
     %% Storage hooks
     Dispatcher -.-> AuditLog
     Gemini -.-> AuditLog
+    OCCPause -.-> AuditLog
     Ingest -.-> IdemDB
     WD & OK & LU & EQ & SL -.-> MockDB
 ```
 
 ---
 
-### 2. Event Lifecycle Sequence Diagram
+### 2. Scenario 06: Concurrent Webhooks & OCC Flow
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Webhook as Ashby / Workday
-    participant Pipeline as Pipeline Ingestion
-    participant Idem as Idempotency Store
-    participant Rec as Reconciler (Diff)
-    participant SM as State Machine
-    participant AI as Gemini/Claude Arbiter
-    participant Disp as Dispatcher
-    participant External as Downstream (Okta/Eq/Slack)
-    participant Audit as Audit Log (JSONL)
+    actor T1 as Thread 1 (Job Title Update)
+    actor T2 as Thread 2 (Preferred Name Update)
+    participant Lock as LockManager (Per-Hire Lock)
+    participant Pipe as Pipeline Instance
+    participant Store as Thread-Safe Hire Store
+    participant Audit as Audit Log
 
-    Webhook->>Pipeline: POST /events (ChangeEvent)
-    Pipeline->>Idem: has_seen(SHA256)?
-    alt Event Already Processed (Replay)
-        Idem-->>Pipeline: true
-        Pipeline-->>Webhook: 200 OK (SKIPPED / Deduplicated)
-    else First-time Event
-        Idem-->>Pipeline: false
-        Pipeline->>SM: transition(VALIDATING)
-        Pipeline->>Rec: diff(old_state, incoming_state)
+    Note over T1,T2: Both webhooks hit pipeline at the EXACT same millisecond for HIRE-S06
+    T1->>Lock: acquire_lock("HIRE-S06")
+    Lock-->>T1: Lock Granted (Thread 1 proceeds)
+    T2->>Lock: acquire_lock("HIRE-S06")
+    Note over T2,Lock: Thread 2 blocks & waits (No data race)
+
+    T1->>Store: load_hire("HIRE-S06") [Version: 16]
+    T1->>Pipe: Reconcile & Dispatch (job_title)
+    T1->>Store: save_hire("HIRE-S06") [Version: 16 → 20]
+    T1->>Lock: release_lock("HIRE-S06")
+    
+    Lock-->>T2: Lock Granted (Thread 2 wakes up)
+    T2->>Store: load_hire("HIRE-S06") [Reads freshly committed Version: 20!]
+    T2->>Pipe: Reconcile & Dispatch (preferred_name)
+    T2->>Store: save_hire("HIRE-S06") [Version: 20 → 24]
+    T2->>Lock: release_lock("HIRE-S06")
+
+    Note over T1,T2: Result: Monotonic version advances (16 → 20 → 24) without dirty overwrites
+```
+
+---
+
+### 3. Scenario 07: Missed Webhook Recovery via Reconciliation Poller
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor ATS as Ashby ATS
+    participant Poller as ReconciliationPoller (Cron)
+    participant Pipe as Pipeline
+    participant Downstream as Downstream (Okta, Workday, etc.)
+    participant Slack as Slack #people-ops-alerts
+
+    Note over ATS: Recruiter accepts candidate or updates start date in ATS.<br/>Network blip drops the webhook! Pipeline receives NOTHING.
+    
+    loop Scheduled Sweep (e.g., Every 1 Hour)
+        Poller->>ATS: list_hires() (Fetch all active offers)
+        ATS-->>Poller: [Hire A, Hire B (Updated)]
         
-        alt Conflict Found (e.g. Address changed while laptop SHIPPED)
-            Rec-->>Pipeline: HireStateDiff(has_conflict=True)
-            Pipeline->>SM: transition(CONFLICT_PAUSED)
-            Pipeline->>Audit: log(CONFLICT_DETECTED)
-            Pipeline->>AI: resolve(hire, diff, audit_history)
-            AI-->>Pipeline: { action: "CANCEL_EQUIPMENT", escalate: true }
-            Pipeline->>External: Slack #people-ops-alerts
-            Pipeline->>Audit: log(CLAUDE_RESOLVED)
-        else Standard Clean Change / New Hire
-            Rec-->>Pipeline: HireStateDiff(has_conflict=False)
-            Pipeline->>SM: transition(SYNCING)
-            Pipeline->>Disp: dispatch(hire, diff)
-            Disp->>External: Provision Okta + Lumos + Equipment
-            Disp->>SM: complete_gate(...) & transition(SYNCED / DAY1_READY)
-            Disp->>Audit: log(PROVISIONED / DAY1_READY)
+        Poller->>Pipe: _load_hire(Hire A)
+        alt Case 1: Hire was completely missed (never ingested)
+            Poller->>Pipe: process(synthesized ASHBY_HIRE_CREATED event)
+            Pipe->>Downstream: Full provisioning (Okta, Equipment, Slack)
+            Poller->>Slack: Alert: "Self-healed missed hire"
+        else Case 2: Hire exists, but field drift detected (e.g., start_date shifted)
+            Poller->>Poller: reconciler.diff(internal_hire, upstream_hire)
+            Poller->>Pipe: process(synthesized ASHBY_HIRE_UPDATED delta event)
+            Pipe->>Downstream: Selective sync (Update Okta & Workday)
+            Poller->>Slack: Alert: "Healed start_date drift for Hire B"
         end
-        
-        Pipeline->>Idem: mark_seen(key, hire_id)
-        Pipeline-->>Webhook: 200 OK (PROCESSED)
     end
 ```
 
 ---
 
-### 3. State Machine Lifecycle (`HireState`)
+### 4. State Machine Lifecycle (`HireState`)
 
 ```mermaid
 stateDiagram-v2
@@ -143,7 +169,7 @@ stateDiagram-v2
     DISCOVERED --> FAILED: Catastrophic Payload Error
 
     VALIDATING --> PENDING_SYNC: Validated & Clean
-    VALIDATING --> CONFLICT_PAUSED: Conflict Identified
+    VALIDATING --> CONFLICT_PAUSED: Conflict or OCC Collision Identified
     VALIDATING --> FAILED: Dead-Letter Queue
 
     PENDING_SYNC --> SYNCING: Dispatch In Progress
@@ -153,7 +179,7 @@ stateDiagram-v2
     SYNCING --> CONFLICT_PAUSED: Downstream API Rejection
     SYNCING --> FAILED: System Error
 
-    CONFLICT_PAUSED --> PENDING_SYNC: AI/Human Resolved
+    CONFLICT_PAUSED --> PENDING_SYNC: AI / Human Resolved
     CONFLICT_PAUSED --> FAILED: Offer Rescinded / Unresolvable
 
     SYNCED --> DAY1_READY: All 7 Stage Gates Satisfied

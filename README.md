@@ -32,8 +32,9 @@ flowchart TD
 
     subgraph Core["⚙️ Reconciliation Engine (Core Logic)"]
         Ingest["<b>Pipeline Ingestion</b><br/>orchestrator/pipeline.py"]
-        LockMgr["<b>Per-Hire Lock & OCC</b><br/><i>Serializes concurrent webhooks</i>"]
+        LockMgr["<b>Per-Hire Lock Manager</b><br/><i>threading.RLock per hire_id</i>"]
         IdemCheck{"<b>Idempotency Check</b><br/>core/idempotency.py<br/><i>SHA256(hire_id + payload)</i>"}
+        OCCCheck{"<b>OCC Version Check</b><br/><i>expected_version == current?</i>"}
         SchemaVal["<b>Schema Validation</b><br/>core/models/hire_state.py<br/><i>Pydantic v2 Canonical Contract</i>"]
         Reconciler["<b>Diff & Risk Evaluator</b><br/>core/reconciler.py<br/><i>Compares Old vs New State</i>"]
         StateMachine["<b>State Machine & Gates</b><br/>core/state_machine.py<br/><i>DISCOVERED → VALIDATING → ...</i>"]
@@ -62,15 +63,17 @@ flowchart TD
     subgraph Storage["💾 Persistence & Audit"]
         AuditLog[("<b>Immutable Audit Log</b><br/>audit/event_log.jsonl")]
         IdemDB[("<b>Idempotency Store</b><br/>SQLite: data/idempotency.db")]
-        MockDB[("<b>Systems State Store</b><br/>data/mock_db.json")]
+        MockDB[("<b>Systems State Store</b><br/>data/mock_db.json (Thread-Safe)")]
     end
 
     %% Wiring
     Ashby & WorkdaySrc & Poller --> Ingest
     Ingest --> LockMgr
     LockMgr --> IdemCheck
-    IdemCheck -->|Duplicate Key| SkipLog["Discard / No-op"]
-    IdemCheck -->|New Event| SchemaVal
+    IdemCheck -->|Duplicate Key| SkipLog["Discard / No-op (SKIPPED)"]
+    IdemCheck -->|New Event| OCCCheck
+    OCCCheck -->|Stale Version| OCCPause["Pause Event (OCC Collision)"]
+    OCCCheck -->|Version Valid| SchemaVal
     SchemaVal --> StateMachine
     StateMachine --> Reconciler
     Reconciler --> DiffCheck
