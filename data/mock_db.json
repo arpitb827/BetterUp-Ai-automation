@@ -36,8 +36,8 @@
         "cohort_added_to_slack": true,
         "day1_orientation_scheduled": true
       },
-      "created_at": "2026-10-15 08:20:13.886669",
-      "updated_at": "2026-10-15 08:20:13.894167",
+      "created_at": "2026-10-15 10:13:48.933569",
+      "updated_at": "2026-10-15 10:13:48.938804",
       "version": 20,
       "conflict_reason": null,
       "error_message": null
@@ -55,8 +55,8 @@
       "team": "Platform",
       "manager_email": "manager@betterup.com",
       "start_date": "2026-11-29",
-      "created_at": "2026-10-15T08:20:13.886903",
-      "updated_at": "2026-10-15T08:20:13.891927"
+      "created_at": "2026-10-15T10:13:48.933751",
+      "updated_at": "2026-10-15T10:13:48.938237"
     }
   },
   "okta_users": {
@@ -70,8 +70,8 @@
       "manager_email": "manager@betterup.com",
       "start_date": "2026-11-29",
       "status": "PROVISIONED",
-      "provisioned_at": "2026-10-15T08:20:13.887223",
-      "updated_at": "2026-10-15T08:20:13.891606"
+      "provisioned_at": "2026-10-15T10:13:48.933973",
+      "updated_at": "2026-10-15T10:13:48.937912"
     }
   },
   "lumos_access": {
@@ -87,7 +87,7 @@
         "datadog",
         "aws"
       ],
-      "assigned_at": "2026-10-15T08:20:13.887537",
+      "assigned_at": "2026-10-15T10:13:48.934186",
       "status": "ACTIVE"
     }
   },
@@ -106,7 +106,7 @@
         "country": "US"
       },
       "status": "ORDERED",
-      "ordered_at": "2026-10-15T08:20:13.887857",
+      "ordered_at": "2026-10-15T10:13:48.934399",
       "shipped_at": null,
       "delivered_at": null,
       "cancelled_at": null,
@@ -115,46 +115,46 @@
   },
   "slack_messages": [
     {
-      "msg_id": "slack_1792032614",
+      "msg_id": "slack_1792039429",
       "recipient": "#day1-cohort-oct",
       "message": "\ud83d\udc4b Welcome to your cohort, Serena Williams! Starting 2026-11-12 as Software Engineer.",
       "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T08:20:13.888220"
+      "sent_at": "2026-10-15T10:13:48.934638"
     },
     {
-      "msg_id": "slack_1792032614",
+      "msg_id": "slack_1792039429",
       "recipient": "#day1-cohort-oct",
       "message": "\u2705 *Day-1 Ready: Serena Williams*\n> Title: Software Engineer | Dept: Engineering | Team: Platform\n> Start Date: 2026-11-12 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 San Francisco, CA",
       "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T08:20:13.888745"
+      "sent_at": "2026-10-15T10:13:48.934974"
     },
     {
-      "msg_id": "slack_1792032614",
+      "msg_id": "slack_1792039429",
       "recipient": "#people-ops-alerts",
-      "message": "\ud83d\udea8 *Reconciliation Sweep Completed (RECON-1792032613)*\nScanned 1 records.\n\u2022 Healed Missed Hires: 1\n\u2022 Healed Data Drift: 0\n\u2022 Conflicts Paused: 0",
+      "message": "\ud83d\udea8 *Reconciliation Sweep Completed (RECON-1792039428)*\nScanned 1 records.\n\u2022 Healed Missed Hires: 1\n\u2022 Healed Data Drift: 0\n\u2022 Conflicts Paused: 0",
       "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T08:20:13.889993"
+      "sent_at": "2026-10-15T10:13:48.936325"
     },
     {
-      "msg_id": "slack_1792032614",
+      "msg_id": "slack_1792039429",
       "recipient": "#people-ops-alerts",
       "message": "\ud83d\udea8 *Start Date Updated \u2014 Serena Williams*\nNew start date: 2026-11-29. Cohort and equipment schedule updated.",
       "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T08:20:13.892221"
+      "sent_at": "2026-10-15T10:13:48.938493"
     },
     {
-      "msg_id": "slack_1792032614",
+      "msg_id": "slack_1792039429",
       "recipient": "#day1-cohort-oct",
       "message": "\u2705 *Day-1 Ready: Serena Williams*\n> Title: Software Engineer | Dept: Engineering | Team: Platform\n> Start Date: 2026-11-29 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 San Francisco, CA",
       "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T08:20:13.894267"
+      "sent_at": "2026-10-15T10:13:48.938857"
     },
     {
-      "msg_id": "slack_1792032614",
+      "msg_id": "slack_1792039429",
       "recipient": "#people-ops-alerts",
-      "message": "\ud83d\udea8 *Reconciliation Sweep Completed (RECON-1792032613)*\nScanned 1 records.\n\u2022 Healed Missed Hires: 0\n\u2022 Healed Data Drift: 1\n\u2022 Conflicts Paused: 0",
+      "message": "\ud83d\udea8 *Reconciliation Sweep Completed (RECON-1792039428)*\nScanned 1 records.\n\u2022 Healed Missed Hires: 0\n\u2022 Healed Data Drift: 1\n\u2022 Conflicts Paused: 0",
       "message_type": "CHANNEL",
-      "sent_at": "2026-10-15T08:20:13.895775"
+      "sent_at": "2026-10-15T10:13:48.940111"
     }
   ]
 }

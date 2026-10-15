@@ -3,6 +3,13 @@
 > **Take-Home Exercise — People Technology: AI Automation Engineer**  
 > An event-driven reconciliation and synchronization engine tying together **Ashby**, **Workday**, **Okta**, **Lumos**, **Equipment Logistics**, and **Slack**, featuring **Google Gemini / Claude** as an agentic exception arbiter for policy conflicts.
 
+### 📋 Primary Evaluator Deliverables
+| Document | Purpose |
+| :--- | :--- |
+| 📄 **[`BUILD_NOTE.md`](file:///Users/arpit/Better-UP-AI-AUTOMATION/BUILD_NOTE.md)** | **Core Take-Home Write-up:** Slice A ranking vs. B/C, Stack discipline defense vs. low-code (n8n/Zapier), code snippets, prompt schemas, productionize roadmap, and AI tools disclosure (with real bug caught). |
+| 🧪 **[`DEMO_RUN_LOG.md`](file:///Users/arpit/Better-UP-AI-AUTOMATION/DEMO_RUN_LOG.md)** | **Execution Proof:** 7 of 7 scenario run logs, before/after `mock_db.json` states, idempotency replay proof, and real `audit/event_log.jsonl` traces. |
+| 🗺️ **[`SYSTEMS_FLOW_MAP.md`](file:///Users/arpit/Better-UP-AI-AUTOMATION/SYSTEMS_FLOW_MAP.md)** | **Architecture Diagrams:** High-level system map, sequence diagrams for concurrency/poller, state machine lifecycle, operational SLOs, and out-of-scope non-goals. |
+
 ---
 
 ## 📌 Executive Summary & Architecture

@@ -190,3 +190,29 @@ stateDiagram-v2
     FAILED --> [*]
     DAY1_READY --> [*]
 ```
+
+---
+
+### 5. Operational Boundaries, Freshness SLOs & Out-of-Scope Non-Goals
+
+#### A. Expected Volume & Throughput Thresholds
+* **Annual Hiring Target:** ~1,200 to 2,500 hires/year (~50–100 hires/week during peak cohort cycles).
+* **Peak Event Burst:** Up to 100 webhook events/hour (Friday offer acceptances or Monday morning start date adjustments).
+* **Concurrency Ceiling:** Per-hire mutex ensures sequential execution per employee, with up to 50 simultaneous workers processing separate hires in parallel.
+
+#### B. Freshness Service Level Objectives (SLOs)
+| Operational Metric | Target SLO | Maximum Threshold | Mitigation on Breach |
+| :--- | :--- | :--- | :--- |
+| **Real-time Webhook Ingestion Latency** | **< 3 seconds** | 10 seconds | Downstream retry with exponential backoff |
+| **End-to-End Provisioning Propagation** | **< 30 seconds** | 60 seconds | Paged to People Ops Slack alert channel |
+| **Stuck/Dropped Webhook Healing (Poller)**| **< 1 hour** | 4 hours | Scheduled poller sweep auto-heals drift |
+| **Hardware Procurement Gate** | **T-7 business days** | T-5 business days | Immediate AI escalation to IT logistics |
+| **Identity Provisioning Gate** | **T-3 business days** | T-1 business day | Okta provisioning auto-triggered |
+
+#### C. Explicit Out-of-Scope Non-Goals
+1. **Payroll Calculation & Tax Withholding:**  
+   * *Out of Scope:* While Workday worker records are created and synced, tax jurisdiction setup, direct deposit banking, and payroll ledger execution are strictly managed by Finance/Payroll within Workday and are **not** orchestrated by this engine.
+2. **Hardware Vendor Warehousing ERP:**  
+   * *Out of Scope:* The engine sends dispatch and cancellation directives to the hardware connector (`EquipmentConnector`), but internal warehouse inventory restocking, supply chain logistics, and device procurement contracts are handled out-of-band by IT Operations.
+3. **Ongoing Performance & Compensation Reviews:**  
+   * *Out of Scope:* This engine's domain boundary is strictly the **Pre-Hire through Day-1 Orientation lifecycle** (`DISCOVERED` to `DAY1_READY`). Once Day 1 commences, employee lifecycle events (promotions, performance management in Lattice) are decoupled.
