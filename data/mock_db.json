@@ -1,0 +1,160 @@
+{
+  "hires": {
+    "HIRE-S07": {
+      "hire_id": "HIRE-S07",
+      "workday_id": "WD-HIRE-S07",
+      "ashby_id": "ASHBY-S07",
+      "source": "ASHBY",
+      "legal_first_name": "Serena",
+      "legal_last_name": "Williams",
+      "preferred_name": null,
+      "personal_email": "serena.williams@gmail.com",
+      "work_email": "serena.williams@betterup.com",
+      "job_title": "Software Engineer",
+      "department": "Engineering",
+      "team": "Platform",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-29",
+      "shipping_address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "San Francisco",
+        "state": "CA",
+        "zip_code": "94105",
+        "country": "US"
+      },
+      "laptop_model": "MacBook Pro 14\"",
+      "status": "DAY1_READY",
+      "okta_status": "PROVISIONED",
+      "equipment_status": "ORDERED",
+      "stage_gates": {
+        "background_check_complete": true,
+        "it_hardware_survey_submitted": true,
+        "okta_account_provisioned": true,
+        "lumos_access_assigned": true,
+        "equipment_ordered": true,
+        "cohort_added_to_slack": true,
+        "day1_orientation_scheduled": true
+      },
+      "created_at": "2026-10-15 08:20:13.886669",
+      "updated_at": "2026-10-15 08:20:13.894167",
+      "version": 20,
+      "conflict_reason": null,
+      "error_message": null
+    }
+  },
+  "employees": {
+    "WD-HIRE-S07": {
+      "workday_id": "WD-HIRE-S07",
+      "hire_id": "HIRE-S07",
+      "legal_first_name": "Serena",
+      "legal_last_name": "Williams",
+      "personal_email": "serena.williams@gmail.com",
+      "job_title": "Software Engineer",
+      "department": "Engineering",
+      "team": "Platform",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-29",
+      "created_at": "2026-10-15T08:20:13.886903",
+      "updated_at": "2026-10-15T08:20:13.891927"
+    }
+  },
+  "okta_users": {
+    "HIRE-S07": {
+      "hire_id": "HIRE-S07",
+      "work_email": "serena.williams@betterup.com",
+      "legal_first_name": "Serena",
+      "legal_last_name": "Williams",
+      "job_title": "Software Engineer",
+      "department": "Engineering",
+      "manager_email": "manager@betterup.com",
+      "start_date": "2026-11-29",
+      "status": "PROVISIONED",
+      "provisioned_at": "2026-10-15T08:20:13.887223",
+      "updated_at": "2026-10-15T08:20:13.891606"
+    }
+  },
+  "lumos_access": {
+    "HIRE-S07": {
+      "hire_id": "HIRE-S07",
+      "department": "Engineering",
+      "team": "Platform",
+      "apps": [
+        "github",
+        "jira",
+        "confluence",
+        "figma",
+        "datadog",
+        "aws"
+      ],
+      "assigned_at": "2026-10-15T08:20:13.887537",
+      "status": "ACTIVE"
+    }
+  },
+  "equipment_orders": {
+    "HIRE-S07": {
+      "order_id": "ORDER-HIRE-S07",
+      "hire_id": "HIRE-S07",
+      "recipient_name": "Serena Williams",
+      "laptop_model": "MacBook Pro 14\"",
+      "address": {
+        "street_line_1": "123 Market St",
+        "street_line_2": null,
+        "city": "San Francisco",
+        "state": "CA",
+        "zip_code": "94105",
+        "country": "US"
+      },
+      "status": "ORDERED",
+      "ordered_at": "2026-10-15T08:20:13.887857",
+      "shipped_at": null,
+      "delivered_at": null,
+      "cancelled_at": null,
+      "tracking_number": null
+    }
+  },
+  "slack_messages": [
+    {
+      "msg_id": "slack_1792032614",
+      "recipient": "#day1-cohort-oct",
+      "message": "\ud83d\udc4b Welcome to your cohort, Serena Williams! Starting 2026-11-12 as Software Engineer.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T08:20:13.888220"
+    },
+    {
+      "msg_id": "slack_1792032614",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: Serena Williams*\n> Title: Software Engineer | Dept: Engineering | Team: Platform\n> Start Date: 2026-11-12 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 San Francisco, CA",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T08:20:13.888745"
+    },
+    {
+      "msg_id": "slack_1792032614",
+      "recipient": "#people-ops-alerts",
+      "message": "\ud83d\udea8 *Reconciliation Sweep Completed (RECON-1792032613)*\nScanned 1 records.\n\u2022 Healed Missed Hires: 1\n\u2022 Healed Data Drift: 0\n\u2022 Conflicts Paused: 0",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T08:20:13.889993"
+    },
+    {
+      "msg_id": "slack_1792032614",
+      "recipient": "#people-ops-alerts",
+      "message": "\ud83d\udea8 *Start Date Updated \u2014 Serena Williams*\nNew start date: 2026-11-29. Cohort and equipment schedule updated.",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T08:20:13.892221"
+    },
+    {
+      "msg_id": "slack_1792032614",
+      "recipient": "#day1-cohort-oct",
+      "message": "\u2705 *Day-1 Ready: Serena Williams*\n> Title: Software Engineer | Dept: Engineering | Team: Platform\n> Start Date: 2026-11-29 | Manager: manager@betterup.com\n> Laptop: MacBook Pro 14\" \u2192 San Francisco, CA",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T08:20:13.894267"
+    },
+    {
+      "msg_id": "slack_1792032614",
+      "recipient": "#people-ops-alerts",
+      "message": "\ud83d\udea8 *Reconciliation Sweep Completed (RECON-1792032613)*\nScanned 1 records.\n\u2022 Healed Missed Hires: 0\n\u2022 Healed Data Drift: 1\n\u2022 Conflicts Paused: 0",
+      "message_type": "CHANNEL",
+      "sent_at": "2026-10-15T08:20:13.895775"
+    }
+  ]
+}
